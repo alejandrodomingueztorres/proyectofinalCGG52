@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public static PlayerController instance;
+
     public float moveSpeed;
     public float jumpForce;
     public float gravityScale = 5f;
@@ -16,6 +19,11 @@ public class PlayerController : MonoBehaviour
     public GameObject playerModel;
 
     public Animator animator;
+
+    public void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +38,17 @@ public class PlayerController : MonoBehaviour
         moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
         moveDirection = moveDirection * moveSpeed;
         moveDirection.y = yStore;
+
+        // Salto
+        if (charController.isGrounded)
+        {
+            moveDirection.y = 0f;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                moveDirection.y = jumpForce;
+            }
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -47,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
-
+        animator.SetBool("Grounded", charController.isGrounded);
 
     }
 }
