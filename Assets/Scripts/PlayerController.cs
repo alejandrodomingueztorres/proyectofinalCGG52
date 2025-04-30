@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+
+    public bool isKnocking;
+    public float knockBackLength = .5f;
+    private float knockBackCounter;
+    public Vector2 knockBackPower;
+
+    public GameObject[] playerPieces;
+
     public void Awake()
     {
         instance = this;
@@ -36,6 +44,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isKnocking)
+        {
         float yStore = moveDirection.y;
         moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
         moveDirection = moveDirection * moveSpeed;
@@ -79,12 +89,39 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }
+            animator.SetFloat("VerticalSpeed", moveDirection.y);
+            animator.SetBool("IsJumping", isCurrentlyJumping); 
+        }
+        if (isKnocking)
+        {
+            knockBackCounter -= Time.deltaTime;
+
+            float yStore = moveDirection.y;
+            moveDirection = (playerModel.transform.forward * knockBackPower.x);
+            moveDirection.y = yStore;
+
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+
+            charController.Move(moveDirection * Time.deltaTime);
+
+            if (knockBackCounter <= 0)
+            {
+                isKnocking = false;
+            }
+        }
 
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
         animator.SetBool("Grounded", charController.isGrounded);
 
-        animator.SetFloat("VerticalSpeed", moveDirection.y);
-        animator.SetBool("IsJumping", isCurrentlyJumping);
+    }
+
+    public void Knocback()
+    {
+        isKnocking = true;
+        knockBackCounter = knockBackLength;
+        Debug.Log("Knoicoked Back");
+        moveDirection.y = knockBackPower.y;
+        charController.Move(moveDirection * Time.deltaTime);
     }
 
 }
