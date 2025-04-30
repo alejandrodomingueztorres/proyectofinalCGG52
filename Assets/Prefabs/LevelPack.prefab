@@ -56,8 +56,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226836258574654139}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.8481013e-19, y: 0.0000000284929, z: -0.000000008740413, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.00000004421004, y: 0.000000008117058, z: -0.0000000019622055, w: 1}
+  m_LocalPosition: {x: -0.00000023841858, y: 4.1647822e-15, z: 1.358687e-14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 7798641132850175784}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +216,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879517757681870329}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.018141434, y: 0.00000002868716, z: -0.000000008232358, w: 0.9998355}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.018141463, y: 0.00000004051368, z: -0.000000011618934, w: 0.9998355}
+  m_LocalPosition: {x: -0.00000023841858, y: 4.1647822e-15, z: 1.358687e-14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -406,6 +406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8253744969275316144}
+  - component: {fileID: 2473063606463953704}
   m_Layer: 0
   m_Name: LevelPack
   m_TagString: Untagged
@@ -431,6 +432,18 @@ Transform:
   - {fileID: 3295131661312410729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2473063606463953704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322442707798257580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1f44da99cc7d24a94779d5893ad3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3691531469768812052
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510133176470844206}
   - component: {fileID: 4022635307903388631}
+  - component: {fileID: 4159969586818795083}
   m_Layer: 0
   m_Name: Systems Manager
   m_TagString: Untagged
@@ -475,6 +489,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1f44da99cc7d24a94779d5893ad3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4159969586818795083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691531469768812052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af19280eb28a8a44b8059d3519a3b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 0
 --- !u!1 &3760316834294768825
 GameObject:
   m_ObjectHideFlags: 3
@@ -500,8 +528,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3760316834294768825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.018189492, y: 0.000000028381919, z: -0.000000009267812, w: 0.9998346}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.018189507, y: 0.000000040064887, z: -0.000000013082925, w: 0.9998346}
+  m_LocalPosition: {x: -0.00000023841858, y: 4.1647822e-15, z: 1.358687e-14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -848,7 +876,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5290702821907543791}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14817077, y: -0.00000002947342, z: 0.0000000044158424, w: 0.9889618}
+  m_LocalRotation: {x: 0.14817077, y: -0.000000029473362, z: 0.0000000044158335, w: 0.9889618}
   m_LocalPosition: {x: 2.2188683, y: 4.822934, z: -8.398399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1087,6 +1115,10 @@ PrefabInstance:
     - target: {fileID: 6815565458368210323, guid: 73372dc632d43aa4eb43610c78ce94b5, type: 3}
       propertyPath: m_Name
       value: RoBOT
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815565458368210323, guid: 73372dc632d43aa4eb43610c78ce94b5, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7362118178942883601, guid: 73372dc632d43aa4eb43610c78ce94b5, type: 3}
       propertyPath: m_Controller

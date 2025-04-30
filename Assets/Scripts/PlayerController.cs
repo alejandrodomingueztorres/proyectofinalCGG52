@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float rotateSpeed = 5f;
 
     private Vector3 moveDirection;
+    private bool wasJumping = false;
 
     public CharacterController charController;
     public Camera playerCamara;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerCamara = Camera.main;
+        
     }
 
     // Update is called once per frame
@@ -39,21 +41,34 @@ public class PlayerController : MonoBehaviour
         moveDirection = moveDirection * moveSpeed;
         moveDirection.y = yStore;
 
+        bool isCurrentlyJumping = !charController.isGrounded && moveDirection.y > 0;
         // Salto
         if (charController.isGrounded)
         {
-            moveDirection.y = 0f;
+            moveDirection.y = -0.3f;
+
+            if (wasJumping)
+            {
+                wasJumping = false;
+                animator.SetTrigger("Land");
+            }
 
             if (Input.GetButtonDown("Jump"))
             {
                 moveDirection.y = jumpForce;
+                animator.SetTrigger("TakeOff");
+                wasJumping = true;
+            }
+        }
+        else
+        {
+            if (!isCurrentlyJumping && wasJumping)
+            {
+                wasJumping = false;
+                animator.SetTrigger("StartFalling");
             }
         }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            moveDirection.y = jumpForce;
-        }
 
         moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
         charController.Move(moveDirection * Time.deltaTime);
@@ -68,5 +83,8 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
         animator.SetBool("Grounded", charController.isGrounded);
 
+        animator.SetFloat("VerticalSpeed", moveDirection.y);
+        animator.SetBool("IsJumping", isCurrentlyJumping);
     }
+
 }
