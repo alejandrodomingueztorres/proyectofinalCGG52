@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private Vector3 respawnPosition;
 
-    public GameObject deathEffect;
+    public GameObject DeathEffect;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.fadeToBlack = true;
 
-        Instantiate(deathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
+        Instantiate(DeathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
 
         yield return new WaitForSeconds(2f);
 
@@ -60,6 +60,6 @@ public class GameManager : MonoBehaviour
     public void SetSpawnPoint(Vector3 newSpawnPoint)
     {
         respawnPosition = newSpawnPoint;
-        Debug.Log("Spwan Set");
+        Debug.Log("Spawn Set");
     }
 }

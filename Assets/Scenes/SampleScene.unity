@@ -1137,6 +1137,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000011618934
       objectReference: {fileID: 0}
+    - target: {fileID: 2473063606463953704, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: DeathEffect
+      value: 
+      objectReference: {fileID: 7181586160474937875, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
     - target: {fileID: 3322442707798257580, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_Name
       value: LevelPack
@@ -1144,11 +1148,11 @@ PrefabInstance:
     - target: {fileID: 4022635307903388631, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: DeathEffect
       value: 
-      objectReference: {fileID: 3822567427468296715, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
+      objectReference: {fileID: 1615467701871762457, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
     - target: {fileID: 4022635307903388631, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: deathEffect
       value: 
-      objectReference: {fileID: 3822567427468296715, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
+      objectReference: {fileID: 1615467701871762457, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
     - target: {fileID: 4159969586818795083, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: maxHealth
       value: 5

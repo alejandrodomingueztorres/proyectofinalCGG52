@@ -70,7 +70,7 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void addHealth(int amountToHealth)
+    public void AddHealth(int amountToHealth)
     {
         currentHealth += amountToHealth;
         if(currentHealth > maxHealth)

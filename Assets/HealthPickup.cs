@@ -20,7 +20,7 @@ public class HealthPickup : MonoBehaviour
             }
             else
             {
-                HealthManager.instance.addHealth(healAmount);
+                HealthManager.instance.AddHealth(healAmount);
             }
         }
     }
