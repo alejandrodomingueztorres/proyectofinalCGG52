@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     public float fadeSpeed;
     public bool fadeToBlack, fadeFromBlack;
 
+    public Text healthTex;
+    public Image healthImage;
+
+    public Text coinText;
+
     private void Awake()
     {
         instance = this;
