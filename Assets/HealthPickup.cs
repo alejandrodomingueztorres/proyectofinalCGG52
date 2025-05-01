@@ -8,7 +8,7 @@ public class HealthPickup : MonoBehaviour
     public bool isFullHeal;
 
     public GameObject healthEffect;
-
+    public int soundToPlay;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,10 +23,12 @@ public class HealthPickup : MonoBehaviour
             if (isFullHeal)
             {
                 HealthManager.instance.ResetHealth();
+                AudioManager.instance.PlaySFX(soundToPlay);
             }
             else
             {
                 HealthManager.instance.AddHealth(healAmount);
+                
             }
         }
     }
