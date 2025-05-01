@@ -191,6 +191,10 @@ MonoBehaviour:
   playerCamara: {fileID: 4158951361749584429}
   playerModel: {fileID: 8787540157236388535}
   animator: {fileID: 4705455532124508213}
+  isKnocking: 0
+  knockBackLength: 0.5
+  knockBackPower: {x: 0, y: 0}
+  playerPieces: []
 --- !u!1 &879517757681870329
 GameObject:
   m_ObjectHideFlags: 3
@@ -444,6 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1f44da99cc7d24a94779d5893ad3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathEffect: {fileID: 0}
+  currentCoins: 0
 --- !u!1 &3691531469768812052
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +461,7 @@ GameObject:
   - component: {fileID: 510133176470844206}
   - component: {fileID: 4022635307903388631}
   - component: {fileID: 4159969586818795083}
+  - component: {fileID: 3817252882624432674}
   m_Layer: 0
   m_Name: Systems Manager
   m_TagString: Untagged
@@ -489,6 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc1f44da99cc7d24a94779d5893ad3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathEffect: {fileID: 0}
+  currentCoins: 0
 --- !u!114 &4159969586818795083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +512,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 0
+  invincibleLength: 2
+  healthBarImages: []
+--- !u!114 &3817252882624432674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691531469768812052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc380eaddc8d5343a53a33c614ce513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: []
+  sfx: []
+  musicMixer: {fileID: -4135484649433783448, guid: 58b035e1d92db8f418e862b52a61df4a, type: 2}
+  sfxMixer: {fileID: -6421210901363938576, guid: 58b035e1d92db8f418e862b52a61df4a, type: 2}
 --- !u!1 &3760316834294768825
 GameObject:
   m_ObjectHideFlags: 3
