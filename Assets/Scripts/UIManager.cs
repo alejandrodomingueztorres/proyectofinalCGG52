@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     public Text coinText;
 
+    public GameObject pauseScreen;
+
     private void Awake()
     {
         instance = this;
@@ -52,4 +54,36 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+
+    public void Reset()
+    {
+        GameManager.instance.PauseUnPase();
+    }
+
+    public void Resume()
+    {
+
+    }
+
+    public void OpenOptions()
+    {
+        
+    }
+
+    public void CloseOptions()
+    {
+
+    }
+
+    public void LevelSelect()
+    {
+
+    }
+
+    public void MainMenu()
+    {
+
+    }
+
 }
+
