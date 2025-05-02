@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnPase();
         }
@@ -84,17 +84,19 @@ public class GameManager : MonoBehaviour
             UIManager.instance.pauseScreen.SetActive(false);  
             Time.timeScale = 1f;
 
-            Cursor.visible = false; 
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
         }
         else
         {
             UIManager.instance.pauseScreen.SetActive(true);
-            UIManager.instance.CloseOptions();
+            
             Time.timeScale = 0f;
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+
         }
     }
 }

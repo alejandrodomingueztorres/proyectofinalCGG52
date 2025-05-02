@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     public Text coinText;
 
-    public GameObject pauseScreen, optionsScreen;
+    public GameObject pauseScreen;
 
     public Slider musicVolSlider, sfxVolSlider;
 
@@ -64,17 +64,17 @@ public class UIManager : MonoBehaviour
 
     public void Resume()
     {
-
+        GameManager.instance.PauseUnPase();
     }
 
     public void OpenOptions()
     {
-        optionsScreen.SetActive(true);
+       
     }
 
     public void CloseOptions() 
     {
-        optionsScreen.SetActive(false);
+        
     }
 
     public void LevelSelect()
