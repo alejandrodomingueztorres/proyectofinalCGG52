@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour
     public GameObject pauseScreen;
 
     public Slider musicVolSlider, sfxVolSlider;
+
+    public string mainMenu, levelSelect;
 
     private void Awake()
     {
@@ -79,12 +82,12 @@ public class UIManager : MonoBehaviour
 
     public void LevelSelect()
     {
-
+        SceneManager.LoadScene(levelSelect);
     }
 
     public void MainMenu()
     {
-
+        SceneManager.LoadScene(mainMenu);
     }
     public void SetMusicLevel()
     {
