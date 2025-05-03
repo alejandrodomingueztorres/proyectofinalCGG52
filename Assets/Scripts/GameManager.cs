@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject DeathEffect;
 
     public int currentCoins;
+
+    public int levelEndMusic;
+
+    public string levelToLoad;
 
     private void Awake()
     {
@@ -98,5 +103,14 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
 
         }
+    }
+    public IEnumerator LevelEndWaiter()
+    {
+        AudioManager.instance.PlayMusic(levelEndMusic);
+        PlayerController.instance.stopMove = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(levelToLoad);
     }
 }

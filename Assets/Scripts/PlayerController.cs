@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] playerPieces;
 
+    public float bounceForce = 8f;
+
+    public bool stopMove;
+
     public void Awake()
     {
         instance = this;
@@ -44,7 +48,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isKnocking)
+        if (!isKnocking  && !stopMove)
         {
         float yStore = moveDirection.y;
         moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) + (transform.right * Input.GetAxisRaw("Horizontal"));
@@ -110,6 +114,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (stopMove)
+        {
+            moveDirection =  Vector3.zero;
+            moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
+            charController.Move(moveDirection);
+        }
+
         animator.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
         animator.SetBool("Grounded", charController.isGrounded);
 
@@ -121,6 +132,12 @@ public class PlayerController : MonoBehaviour
         knockBackCounter = knockBackLength;
         Debug.Log("Knoicoked Back");
         moveDirection.y = knockBackPower.y;
+        charController.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void Bounce()
+    {
+        moveDirection.y = bounceForce;
         charController.Move(moveDirection * Time.deltaTime);
     }
 
