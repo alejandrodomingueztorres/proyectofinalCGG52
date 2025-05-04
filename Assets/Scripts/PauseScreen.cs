@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour
 {
@@ -58,12 +59,12 @@ public class PauseScreen : MonoBehaviour
 
     public void LevelSelect()
     {
-
+        SceneManager.LoadScene(UIManager.instance.levelSelect);
     }
 
     public void MainMenu()
     {
-
+        SceneManager.LoadScene(UIManager.instance.mainMenu);
     }
     public void SetMusicLevel()
     {

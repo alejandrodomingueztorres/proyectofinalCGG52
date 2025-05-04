@@ -111,6 +111,9 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
+
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
+
         SceneManager.LoadScene(levelToLoad);
     }
 }

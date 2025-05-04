@@ -9,10 +9,21 @@ public class MainMenu : MonoBehaviour
 
     public string levelSelect;
 
+    public GameObject continueButton;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Continue"))
+        {
+            continueButton.SetActive(true);
+        }
+    }
 
     public void NewGame()
     {
         SceneManager.LoadScene(firstLevel);
+
+        PlayerPrefs.SetInt("Continue", 0);
     }
 
     public void Continue()
@@ -20,7 +31,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(levelSelect);
     }
 
-    public void QuirGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
