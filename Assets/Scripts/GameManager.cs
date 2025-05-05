@@ -114,6 +114,18 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
 
+        if(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_coins"))
+        {
+            if(currentCoins > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_coins"))
+            {
+                PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_coins", currentCoins);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_coins", currentCoins);
+        }
+
         SceneManager.LoadScene(levelToLoad);
     }
 }

@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelEntry : MonoBehaviour
 {
 
-    public string levelName;
+    public string levelName, levelToCheck, displayName;
 
-    public string levelToCheck;
 
     public bool canLoadLevel;
 
@@ -32,6 +31,12 @@ public class LevelEntry : MonoBehaviour
             mapPointInactive.SetActive(true);
             levelUnlocked = false;
         }
+
+        if(PlayerPrefs.GetString("CurrentLevel")== levelName)
+        {
+            PlayerController.instance.transform.position = transform.position;
+            ResetPlayer.instance.respawnPosition= transform.position; 
+        }
     }
 
     private void Update()
@@ -40,13 +45,28 @@ public class LevelEntry : MonoBehaviour
         {
             StartCoroutine("LevelLoadWaiter");
             levelLoading = true;
+
+            
         }
+
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             canLoadLevel = true;
+
+            LSUIManager.instance.lNamePanel.SetActive(true);
+            LSUIManager.instance.lNameText.text = displayName;
+
+            if(PlayerPrefs.HasKey(levelName + "_coins"))
+            {
+                LSUIManager.instance.coinsText.text = PlayerPrefs.GetInt(levelName + "_coins").ToString();
+            }else
+            {
+                LSUIManager.instance.coinsText.text = "???";
+            }
         }
     }
 
@@ -56,6 +76,8 @@ public class LevelEntry : MonoBehaviour
         {
             canLoadLevel = true;
         }
+
+        LSUIManager.instance.lNamePanel.SetActive(false);
     }
 
     public IEnumerator LevelLoadWaiter()
@@ -66,5 +88,6 @@ public class LevelEntry : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene(levelName);
+        PlayerPrefs.SetString("CurrentLevel", levelName);
     }
 }
