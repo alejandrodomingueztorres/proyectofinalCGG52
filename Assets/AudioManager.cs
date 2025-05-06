@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    public int levelMusicToPlay;
+
     public AudioSource[] music;
     public AudioSource[] sfx;
 

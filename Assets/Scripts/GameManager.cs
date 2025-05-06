@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public string levelToLoad;
 
+    public bool isRespawning;
+
     private void Awake()
     {
         instance = this;
@@ -55,6 +57,8 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.fadeToBlack = true;
 
+        isRespawning = true;
+
         Instantiate(DeathEffect, PlayerController.instance.transform.position + new Vector3(0f, 1f, 0f), PlayerController.instance.transform.rotation);
 
         yield return new WaitForSeconds(2f);
@@ -68,6 +72,8 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.gameObject.SetActive(true);
 
         HealthManager.instance.ResetHealth();
+
+        isRespawning = false;
     }
 
     public void SetSpawnPoint(Vector3 newSpawnPoint)
