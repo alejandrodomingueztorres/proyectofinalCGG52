@@ -458,7 +458,7 @@ Transform:
   m_GameObject: {fileID: 118928412631778354}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3188703, y: -1.2545608, z: -2.9291956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2170,6 +2170,7 @@ MonoBehaviour:
   currentCoins: 0
   levelEndMusic: 0
   levelToLoad: Test1
+  isRespawning: 0
 --- !u!1 &1974131233764103776
 GameObject:
   m_ObjectHideFlags: 0
@@ -6744,7 +6745,6 @@ GameObject:
   - component: {fileID: 76873835914943336}
   - component: {fileID: 6372592081334258950}
   - component: {fileID: 261037041621899470}
-  - component: {fileID: 5488217851691497712}
   - component: {fileID: 1476890053504977924}
   m_Layer: 0
   m_Name: Systems Manager
@@ -6786,6 +6786,7 @@ MonoBehaviour:
   currentCoins: 0
   levelEndMusic: 0
   levelToLoad: Test1
+  isRespawning: 0
 --- !u!114 &261037041621899470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6807,40 +6808,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 498e1f9b5f6220b4c9610d65d4ae5aed, type: 3}
   - {fileID: 21300000, guid: 1992c93d4dd214b43a695ef454a4ed60, type: 3}
   - {fileID: 21300000, guid: 9704dbb03d7288b4e9f0e15525db38d1, type: 3}
---- !u!114 &5488217851691497712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6473499082741401799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc380eaddc8d5343a53a33c614ce513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  sfx:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  musicMixer: {fileID: 2164286179923911965, guid: 58b035e1d92db8f418e862b52a61df4a, type: 2}
-  sfxMixer: {fileID: -804011196990361894, guid: 58b035e1d92db8f418e862b52a61df4a, type: 2}
 --- !u!114 &1476890053504977924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6853,6 +6820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc380eaddc8d5343a53a33c614ce513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelMusicToPlay: 0
   music:
   - {fileID: 7834627376104849424}
   - {fileID: 1173194560323091147}
@@ -7808,7 +7776,7 @@ Transform:
   m_GameObject: {fileID: 7436242328857096123}
   serializedVersion: 2
   m_LocalRotation: {x: 0.14817083, y: -5.470567e-10, z: 8.196256e-11, w: 0.9889618}
-  m_LocalPosition: {x: 1.8288703, y: 5.211013, z: -5.2217484}
+  m_LocalPosition: {x: 1.51, y: 4.87, z: -8.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseScreen : MonoBehaviour
 {
     public GameObject Pause, optionsScreen;
     public bool juegoPausado = false;
+    public Slider musicVolSlider, sfxVolSlider;
     // Start is called before the first frame update
     void Start()
     {

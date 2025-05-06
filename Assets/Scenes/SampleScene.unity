@@ -318,6 +318,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82602dc30cf4504aaff9d027539bc3f, type: 3}
+--- !u!114 &201993835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8344931980678038362, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+  m_PrefabInstance: {fileID: 6020786864987427544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &206254013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2011917823705695336, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+  m_PrefabInstance: {fileID: 6020786864987427544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222404580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1759,8 @@ MonoBehaviour:
   Pause: {fileID: 740029486}
   optionsScreen: {fileID: 244500376}
   juegoPausado: 0
+  musicVolSlider: {fileID: 206254013}
+  sfxVolSlider: {fileID: 201993835}
 --- !u!4 &783689284
 Transform:
   m_ObjectHideFlags: 0
@@ -4618,9 +4642,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 291092839742650566, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 331781387412631847, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 940326011665627743, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: sfxVolSlider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 940326011665627743, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: musicVolSlider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1966933480689020698, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_Name
       value: LevelPack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733271072899427479, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590080201114422551, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.441
       objectReference: {fileID: 0}
     - target: {fileID: 6214476484528680851, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4644,7 +4692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7416806172006119704, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.87
+      value: 4.941
       objectReference: {fileID: 0}
     - target: {fileID: 7416806172006119704, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.z

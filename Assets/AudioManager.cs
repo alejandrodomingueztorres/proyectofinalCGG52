@@ -42,11 +42,11 @@ public class AudioManager : MonoBehaviour
     }
     public void SetMusicLevel()
     {
-        musicMixer.audioMixer.SetFloat("MusicVol", UIManager.instance.musicVolSlider.value);
+        musicMixer.audioMixer.SetFloat("Musicvol", UIManager.instance.musicVolSlider.value);
     }
     public void SetSFXLevel()
     {
-        sfxMixer.audioMixer.SetFloat("SfxVol", UIManager.instance.sfxVolSlider.value);
+        sfxMixer.audioMixer.SetFloat("SFXVol", UIManager.instance.sfxVolSlider.value);
     }
 
 
