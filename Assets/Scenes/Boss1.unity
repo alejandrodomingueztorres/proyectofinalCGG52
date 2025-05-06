@@ -1154,13 +1154,25 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 1c91d649927c6974481c536593788050, type: 3}
+--- !u!114 &1051504780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051504775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96adbde47c16e14ba3295345f93a002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1053819891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1474,6 +1486,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3781234032221327568, guid: 28be80230b4d0984fb2fd6ed2c9dae21, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1498532789}
+    - targetCorrespondingSourceObject: {fileID: 3781234032221327568, guid: 28be80230b4d0984fb2fd6ed2c9dae21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1498532790}
   m_SourcePrefab: {fileID: 100100000, guid: 28be80230b4d0984fb2fd6ed2c9dae21, type: 3}
 --- !u!4 &1120129386 stripped
 Transform:
@@ -1760,13 +1775,25 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 18ba4dcacda82b341bb9a5cdb547eaa4, type: 3}
+--- !u!114 &1498532790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498532785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96adbde47c16e14ba3295345f93a002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1512455234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2057,6 +2084,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5547049190891936053, guid: 9990a8b1d74410648bfdb81849a4f26f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1051504779}
+    - targetCorrespondingSourceObject: {fileID: 5547049190891936053, guid: 9990a8b1d74410648bfdb81849a4f26f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1051504780}
   m_SourcePrefab: {fileID: 100100000, guid: 9990a8b1d74410648bfdb81849a4f26f, type: 3}
 --- !u!4 &1655669118 stripped
 Transform:
