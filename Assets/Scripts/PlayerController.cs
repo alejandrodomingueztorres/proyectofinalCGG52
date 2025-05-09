@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityScale = 5f;
     public float rotateSpeed = 5f;
+    private bool isGrounded;
 
     private Vector3 moveDirection;
     private bool wasJumping = false;
@@ -141,4 +142,21 @@ public class PlayerController : MonoBehaviour
         charController.Move(moveDirection * Time.deltaTime);
     }
 
+    //    void OnCollisionEnter(Collision collision)
+    //    {
+
+    //        if (collision.gameObject.CompareTag("Ground"))
+    //        {
+    //            isGrounded = true;
+    //        }
+    //    }
+
+    //    void OnCollisionExit(Collision collision)
+    //    {
+
+    //        if (collision.gameObject.CompareTag("Ground"))
+    //        {
+    //            isGrounded = false;
+    //        }
+    //    }
 }
