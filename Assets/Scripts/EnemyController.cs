@@ -125,9 +125,9 @@ public class EnemyController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 
                 attackCounter -= Time.deltaTime;
-                if (attackCounter < 0)
+                if (attackCounter <= 0)
                 {
-                    if (distanceToPlayer > attackRange)
+                    if (distanceToPlayer < attackRange)
                     {
                         animator.SetTrigger("Attack");
                         attackCounter = timeBetweenAttacks;
