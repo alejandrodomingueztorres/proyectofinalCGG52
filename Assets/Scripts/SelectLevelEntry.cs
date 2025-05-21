@@ -74,7 +74,7 @@ public class LevelEntry : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            canLoadLevel = true;
+            canLoadLevel = false;
         }
 
         LSUIManager.instance.lNamePanel.SetActive(false);

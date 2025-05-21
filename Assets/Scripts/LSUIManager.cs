@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class LSUIManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class LSUIManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        instance.lNamePanel.SetActive(false);
     }
 
     // Update is called once per frame
