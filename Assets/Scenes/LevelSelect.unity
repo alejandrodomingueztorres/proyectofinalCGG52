@@ -478,7 +478,7 @@ Transform:
   m_GameObject: {fileID: 141304957}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: -11.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f0976b76d20a240af41dfb35338cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Boos1
+  levelName: Boss1
   levelToCheck: Test3
   displayName: 2-0
   canLoadLevel: 0
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 347608059}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -6.8, y: 2.07, z: 38.77}
+  m_LocalPosition: {x: -6.8, y: 1.67, z: 27.53}
   m_LocalScale: {x: 50, y: 50, z: 4.226856}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1761,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200702298, guid: 62c539c9f643c584bbce1b1f98037be8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 200702298, guid: 62c539c9f643c584bbce1b1f98037be8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3987,7 +3987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200702298, guid: 62c539c9f643c584bbce1b1f98037be8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 200702298, guid: 62c539c9f643c584bbce1b1f98037be8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4311,9 +4311,9 @@ SceneRoots:
   - {fileID: 1099574921}
   - {fileID: 6013632388893489366}
   - {fileID: 2036924155}
+  - {fileID: 347608062}
   - {fileID: 1800354717}
   - {fileID: 1400509289}
   - {fileID: 2121954313}
   - {fileID: 2017492126}
-  - {fileID: 347608062}
   - {fileID: 1663877123}
