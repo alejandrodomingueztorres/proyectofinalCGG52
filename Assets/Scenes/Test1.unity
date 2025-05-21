@@ -2535,6 +2535,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 400705866}
+    - target: {fileID: 5392631513838981340, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: timerTime
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 5590080201114422551, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.237

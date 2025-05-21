@@ -10,6 +10,13 @@ public class Timer : MonoBehaviour
     [SerializeField, Tooltip("Tiempo en segundos")] private float timerTime;
     private int minutes, seconds, cents;
 
+    private float startTime; // Tiempo original para reiniciar
+
+    void Start()
+    {
+        startTime = timerTime; // Guarda el tiempo inicial
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,8 +32,8 @@ public class Timer : MonoBehaviour
 
         if (timerTime ==0)
         {
-            //Lanzar evento
-            Destroy(this);
+            GameManager.instance.Respawn();
+            timerTime = startTime;            // Reinicia el tiempo
         }
     }
 }
