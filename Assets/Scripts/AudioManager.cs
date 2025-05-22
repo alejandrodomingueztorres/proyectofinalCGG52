@@ -9,11 +9,14 @@ using UnityEngine.Audio;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única del AudioManager para acceder globalmente.
     /// </summary>
     public static AudioManager instance;
+    #endregion
 
+    #region Configuración de Audio
     /// <summary>
     /// Índice de la pista de música del nivel que se debe reproducir.
     /// </summary>
@@ -33,7 +36,9 @@ public class AudioManager : MonoBehaviour
     /// Mezclador de audio para la música, Mezclador de audio para los efectos de sonido.
     /// </summary>
     public AudioMixerGroup musicMixer, sfxMixer;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Se ejecuta cuando se instancia el objeto. Inicializa la instancia única.
     /// </summary>
@@ -58,7 +63,9 @@ public class AudioManager : MonoBehaviour
     {
         
     }
+    #endregion
 
+    #region Métodos de Reproducción
     /// <summary>
     /// Reproduce una pista de música desde el arreglo de pistas.
     /// </summary>
@@ -77,7 +84,9 @@ public class AudioManager : MonoBehaviour
     {
         sfx[sfxToPlay].Play();
     }
+    #endregion
 
+    #region Métodos de Control de Volumen
     /// <summary>
     /// Ajusta el volumen de la música utilizando el valor del control deslizante en UIManager.
     /// </summary>
@@ -93,4 +102,5 @@ public class AudioManager : MonoBehaviour
     {
         sfxMixer.audioMixer.SetFloat("SFXVol", UIManager.instance.sfxVolSlider.value);
     }
+    #endregion
 }
