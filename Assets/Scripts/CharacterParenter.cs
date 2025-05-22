@@ -2,10 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Permite que un personaje se emparente dinámicamente con plataformas móviles
+/// cuando está sobre ellas, para que herede el movimiento de dichas plataformas.
+/// </summary>
 public class CharacterParenter : MonoBehaviour
 {
+    /// <summary>
+    /// Capa que contiene las plataformas móviles detectables.
+    /// </summary>
     [SerializeField] private LayerMask platformLayer;
+
+    /// <summary>
+    /// Distancia máxima del raycast hacia abajo para detectar plataformas.
+    /// </summary>
     [SerializeField] private float checkDistance = 0.1f;
+
+    /// <summary>
+    /// Indica si se deben mostrar mensajes de depuración en la consola.
+    /// </summary>
     [SerializeField] private bool showDebug = true;
 
     private Transform originalParent;
@@ -13,6 +28,9 @@ public class CharacterParenter : MonoBehaviour
     private Transform currentPlatform;
     private Vector3 lastPlatformPosition;
 
+    /// <summary>
+    /// Inicializa referencias y verifica que el objeto tenga un CharacterController.
+    /// </summary>
     void Start()
     {
         originalParent = transform.parent;
@@ -25,11 +43,15 @@ public class CharacterParenter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Se ejecuta cada frame. Realiza detección de plataformas debajo del jugador y
+    /// establece la relación de parentesco según corresponda.
+    /// </summary>
     void Update()
     {
         if (!characterController.isGrounded)
         {
-            // No estamos en el suelo, liberar de cualquier plataforma
+            // El jugador no está en el suelo, liberar de cualquier plataforma
             if (transform.parent != originalParent)
             {
                 transform.SetParent(originalParent);
@@ -74,6 +96,9 @@ public class CharacterParenter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Dibuja una línea en el editor de Unity para visualizar el raycast que se usa para detectar plataformas.
+    /// </summary>
     void OnDrawGizmos()
     {
         // Visualizar el raycast de detección

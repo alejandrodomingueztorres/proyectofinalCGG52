@@ -2,51 +2,111 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controlador del jugador principal. Maneja el movimiento, rotación, animaciones, rebote y efectos de retroceso (knockback).
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
-
+    /// <summary>
+    /// Instancia única del controlador del jugador.
+    /// </summary>
     public static PlayerController instance;
 
+    /// <summary>
+    /// Velocidad de movimiento del jugador.
+    /// </summary>
     public float moveSpeed;
-    public float jumpForce;
-    public float gravityScale = 5f;
-    public float rotateSpeed = 5f;
-    private bool isGrounded;
 
+    /// <summary>
+    /// Fuerza del salto del jugador.
+    /// </summary>
+    public float jumpForce;
+
+    /// <summary>
+    /// Escala de gravedad personalizada aplicada al jugador.
+    /// </summary>
+    public float gravityScale = 5f;
+
+    /// <summary>
+    /// Velocidad de rotación del jugador hacia la dirección del movimiento.
+    /// </summary>
+    public float rotateSpeed = 5f;
+
+    private bool isGrounded;
     private Vector3 moveDirection;
     private bool wasJumping = false;
 
+    /// <summary>
+    /// Componente CharacterController del jugador.
+    /// </summary>
     public CharacterController charController;
+
+    /// <summary>
+    /// Cámara principal que sigue al jugador.
+    /// </summary>
     public Camera playerCamara;
+
+    /// <summary>
+    /// Modelo 3D del jugador usado para rotación y animaciones.
+    /// </summary>
     public GameObject playerModel;
 
+    /// <summary>
+    /// Controlador de animaciones del jugador.
+    /// </summary>
     public Animator animator;
 
-
+    /// <summary>
+    /// Indica si el jugador está en estado de retroceso (knockback).
+    /// </summary>
     public bool isKnocking;
+
+    /// <summary>
+    /// Duración del retroceso.
+    /// </summary>
     public float knockBackLength = .5f;
     private float knockBackCounter;
+
+    /// <summary>
+    /// Potencia del retroceso en X (horizontal) e Y (vertical).
+    /// </summary>
     public Vector2 knockBackPower;
 
+    /// <summary>
+    /// Piezas del jugador que se pueden usar para efectos visuales (por ejemplo, desmembramiento).
+    /// </summary>
     public GameObject[] playerPieces;
 
+    /// <summary>
+    /// Fuerza aplicada al jugador al rebotar.
+    /// </summary>
     public float bounceForce = 8f;
 
+    /// <summary>
+    /// Indica si el movimiento del jugador está detenido.
+    /// </summary>
     public bool stopMove;
 
+    /// <summary>
+    /// Inicializa la instancia única.
+    /// </summary>
     public void Awake()
     {
         instance = this;
     }
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Se ejecuta antes de la primera actualización del frame. Asigna la cámara principal si no está definida.
+    /// </summary>
     void Start()
     {
         playerCamara = Camera.main;
 
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Se llama una vez por frame. Maneja movimiento, rotación, saltos, retroceso y animaciones.
+    /// </summary>
     void Update()
     {
         if (!isKnocking && !stopMove)
@@ -127,6 +187,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Aplica el retroceso (knockback) al jugador.
+    /// </summary>
     public void Knocback()
     {
         isKnocking = true;
@@ -136,27 +199,31 @@ public class PlayerController : MonoBehaviour
         charController.Move(moveDirection * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Aplica un rebote vertical al jugador.
+    /// </summary>
     public void Bounce()
     {
         moveDirection.y = bounceForce;
         charController.Move(moveDirection * Time.deltaTime);
     }
 
-    //void OnCollisionEnter(Collision collision)
-    //{
+    /*
+    // Métodos alternativos de detección de suelo (no usados con CharacterController)
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
 
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        isGrounded = true;
-    //    }
-    //}
-
-    //void OnCollisionExit(Collision collision)
-    //{
-
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        isGrounded = false;
-    //    }
-    //}
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+    */
 }

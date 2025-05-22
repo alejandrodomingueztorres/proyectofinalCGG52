@@ -2,27 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Administra la salud del jugador, incluyendo el daño, curación, invencibilidad temporal,
+/// y actualización de la interfaz gráfica relacionada con la salud.
+/// </summary>
 public class HealthManager : MonoBehaviour
 {
+    /// <summary>
+    /// Instancia única del <c>HealthManager</c> para acceso global.
+    /// </summary>
     public static HealthManager instance;
+
+    /// <summary>
+    /// Salud actual del jugador, Salud máxima del jugador.
+    /// </summary>
     public int currentHealth, maxHealth;
 
+    /// <summary>
+    /// Duración en segundos durante la cual el jugador es invencible después de recibir daño.
+    /// </summary>
     public float invincibleLength = 2f;
+
+    /// <summary>
+    /// Contador interno de invencibilidad.
+    /// </summary>
     private float invincCounter;
 
+    /// <summary>
+    /// Conjunto de sprites que representan la barra de salud en diferentes niveles.
+    /// </summary>
     public Sprite[] healthBarImages;
 
+    /// <summary>
+    /// Inicializa la instancia del singleton <c>HealthManager</c>.
+    /// </summary>
     private void Awake()
     {
         instance = this;
     }
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// Método llamado al inicio del ciclo de vida del componente.
+    /// Restablece la salud del jugador.
+    /// </summary>
     void Start()
     {
         ResetHealth();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Método llamado una vez por frame. Controla la invencibilidad temporal
+    /// y parpadeo visual de las piezas del jugador durante ese estado.
+    /// </summary>
     void Update()
     {
         if (invincCounter > 0)
@@ -48,6 +79,11 @@ public class HealthManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Aplica daño al jugador si no está en estado de invencibilidad.
+    /// Si la salud llega a cero, se activa la reaparición desde el GameManager.
+    /// </summary>
     public void Hurt()
     {
         if (invincCounter <= 0)
@@ -68,6 +104,10 @@ public class HealthManager : MonoBehaviour
         UpdateUI();
 
     }
+
+    /// <summary>
+    /// Restablece la salud del jugador a su valor máximo y actualiza la interfaz.
+    /// </summary>
     public void ResetHealth()
     {
         currentHealth = maxHealth;
@@ -75,6 +115,10 @@ public class HealthManager : MonoBehaviour
         UpdateUI();
     }
 
+    /// <summary>
+    /// Aumenta la salud del jugador en una cantidad dada, sin exceder el valor máximo.
+    /// </summary>
+    /// <param name="amountToHealth">Cantidad de salud a agregar.</param>
     public void AddHealth(int amountToHealth)
     {
         currentHealth += amountToHealth;
@@ -86,6 +130,10 @@ public class HealthManager : MonoBehaviour
         UpdateUI();
     }
 
+    /// <summary>
+    /// Actualiza la interfaz gráfica del jugador para reflejar su salud actual,
+    /// incluyendo el sprite de la barra de vida correspondiente.
+    /// </summary>
     public void UpdateUI()
     {
         UIManager.instance.healthTex.text = currentHealth.ToString();
@@ -113,6 +161,10 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Elimina toda la salud del jugador y actualiza la interfaz.
+    /// Se puede usar en situaciones como muerte inmediata.
+    /// </summary>
     public void PlayerKilled()
     {
         currentHealth = 0;

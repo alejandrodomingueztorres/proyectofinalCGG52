@@ -3,24 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Controla el comportamiento de un enemigo mediante un sistema de estados (IA): patrullar, perseguir, atacar o esperar.
+/// </summary>
+/// <remarks>
+/// Utiliza <see cref="NavMeshAgent"/> para movimiento y <see cref="Animator"/> para controlar animaciones.
+/// Cambia de estado en función de la distancia al jugador.
+/// </remarks>
 public class EnemyController : MonoBehaviour
 {
+    /// <summary>
+    /// Puntos por los que el enemigo patrulla.
+    /// </summary>
     public Transform[] patrolPoints;
+
+    /// <summary>
+    /// Índice del punto de patrulla actual.
+    /// </summary>
     public int currentPatrolPoint;
 
+    /// <summary>
+    /// Agente de navegación utilizado para el movimiento automático.
+    /// </summary>
     public NavMeshAgent agent;
 
+    /// <summary>
+    /// Componente de animación del enemigo.
+    /// </summary>
     public Animator animator;
 
+    /// <summary>
+    /// Tiempo que el enemigo espera al llegar a un punto de patrulla.
+    /// </summary>
     public float WaitAtPoint = 2f;
+
+    /// <summary>
+    /// Contador interno para controlar el tiempo de espera.
+    /// </summary>
     private float waitCounter;
 
+    /// <summary>
+    /// Distancia mínima desde el jugador para comenzar a perseguirlo.
+    /// </summary>
     public float chaseRange;
 
+    /// <summary>
+    /// Distancia mínima desde el jugador para iniciar un ataque.
+    /// </summary>
     public float attackRange = 1f;
+
+    /// <summary>
+    /// Tiempo entre ataques consecutivos.
+    /// </summary>
     public float timeBetweenAttacks = 2f;
+
+    /// <summary>
+    /// Contador interno que determina cuándo puede volver a atacar.
+    /// </summary>
     private float attackCounter;
 
+    /// <summary>
+    /// Estados posibles de la IA del enemigo.
+    /// </summary>
     public enum AIState
     {
         Idle,
@@ -28,15 +72,23 @@ public class EnemyController : MonoBehaviour
         Chasing,
         Attacking
     };
+
+    /// <summary>
+    /// Estado actual del enemigo.
+    /// </summary>
     public AIState currentState;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Inicializa el estado de espera al comenzar.
+    /// </summary>
     void Start()
     {
         waitCounter = WaitAtPoint;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Controla el comportamiento del enemigo según su estado actual y la distancia al jugador.
+    /// </summary>
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, PlayerController.instance.transform.position);

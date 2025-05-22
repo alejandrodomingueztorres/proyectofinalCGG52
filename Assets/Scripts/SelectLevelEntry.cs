@@ -3,21 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Representa un punto de entrada a un nivel en el mapa de selección.
+/// Verifica si el nivel está desbloqueado, muestra información en la UI,
+/// y permite cargar la escena correspondiente.
+/// </summary>
 public class LevelEntry : MonoBehaviour
 {
-
+    /// <summary>
+    /// Nombre de la escena del nivel a cargar, Nombre de la clave en PlayerPrefs usada para verificar si el nivel está desbloqueado, Nombre mostrado en la interfaz para este punto de nivel.
+    /// </summary>
     public string levelName, levelToCheck, displayName;
 
-
+    /// <summary>
+    /// Indica si el jugador puede cargar este nivel (por estar dentro del área).
+    /// </summary>
     public bool canLoadLevel;
 
+    /// <summary>
+    /// Elemento visual mostrado si el nivel está desbloqueado.
+    /// </summary>
     public GameObject mapPointActive;
+
+    /// <summary>
+    /// Elemento visual mostrado si el nivel está bloqueado.
+    /// </summary>
     public GameObject mapPointInactive;
 
     private bool levelUnlocked;
-
     private bool levelLoading;
 
+    /// <summary>
+    /// Verifica el estado del nivel (bloqueado/desbloqueado) al iniciar,
+    /// actualiza la interfaz y posiciona al jugador si es el nivel actual.
+    /// </summary>
     private void Start()
     {
         if(PlayerPrefs.GetInt(levelToCheck + "_unlocked") == 1 || levelToCheck == "") 
@@ -39,6 +58,9 @@ public class LevelEntry : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Escucha la entrada del jugador para activar la carga del nivel si está en rango.
+    /// </summary>
     private void Update()
     {
         if(Input.GetButtonDown("Jump") && canLoadLevel && levelUnlocked && !levelLoading)
@@ -48,9 +70,12 @@ public class LevelEntry : MonoBehaviour
 
             
         }
-
-        
     }
+
+    /// <summary>
+    /// Detecta la entrada del jugador al área del nivel, permite cargarlo y muestra información.
+    /// </summary>
+    /// <param name="other">Collider del objeto que entra en contacto.</param>
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -70,6 +95,10 @@ public class LevelEntry : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detecta la salida del jugador del área del nivel y oculta la interfaz correspondiente.
+    /// </summary>
+    /// <param name="other">Collider del objeto que sale del área.</param>
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -80,6 +109,10 @@ public class LevelEntry : MonoBehaviour
         LSUIManager.instance.lNamePanel.SetActive(false);
     }
 
+    /// <summary>
+    /// Corrutina que espera antes de cargar el nivel seleccionado. 
+    /// Detiene el movimiento del jugador y activa una animación de fundido.
+    /// </summary>
     public IEnumerator LevelLoadWaiter()
     {
         PlayerController.instance.stopMove = true;
