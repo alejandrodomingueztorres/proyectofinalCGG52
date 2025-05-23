@@ -4,7 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// Controla el comportamiento y las fases de un jefe final en el juego.
-/// Gestiona las transiciones entre fases, el sistema de daño, efectos de audio y la victoria.
+/// Gestiona las transiciones entre fases, animaciones, el sistema de daño, efectos de audio,
+/// reinicio del jefe tras la muerte del jugador y la activación de la zona de victoria.
 /// </summary>
 public class BossController : MonoBehaviour
 {

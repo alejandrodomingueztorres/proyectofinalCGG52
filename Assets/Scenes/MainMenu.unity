@@ -891,10 +891,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstLevel: Test1
   levelSelect: LevelSelect
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 162562914}
   levelNames:
   - Test1
-  - SampleScene
+  - Test2
+  - Test3
+  - Boss1
 --- !u!114 &382454710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,7 +2093,9 @@ MonoBehaviour:
   continueButton: {fileID: 162562914}
   levelNames:
   - Test1
-  - SampleScene
+  - Test2
+  - Test3
+  - Boss1
 --- !u!1 &1172735102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,7 +2543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6013632388104371084, guid: 6e0965b76baec374d9a8e0c82f9033cb, type: 3}
       propertyPath: m_Name
-      value: Water_Plane
+      value: Killzone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
