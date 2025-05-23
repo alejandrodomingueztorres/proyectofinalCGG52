@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     /// Instancia única del GameManager accesible globalmente.
     /// </summary>
     public static GameManager instance;
+    public Timer gameTimer;
     #endregion
 
     #region Variables Privadas
@@ -206,6 +207,12 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.LoadScene(levelToLoad);
+
+
+        PlayerPrefs.SetFloat("TiempoFinal", gameTimer.GetRemainingTime()); 
+        PlayerPrefs.SetInt("MonedasFinal", currentCoins);
+        SceneManager.LoadScene("FinalScene");
     }
+
     #endregion
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 /// <summary>
 /// Temporizador regresivo que se muestra en pantalla.
@@ -55,5 +56,11 @@ public class Timer : MonoBehaviour
             timerTime = startTime; // Reinicia el temporizador
         }
     }
+
+    internal float GetRemainingTime()
+    {
+       return timerTime;
+    }
     #endregion
+
 }
