@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyHealthmanager : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Salud máxima del enemigo.
     /// </summary>
@@ -27,7 +28,9 @@ public class EnemyHealthmanager : MonoBehaviour
     /// Prefab del efecto visual que se instancia al morir, Prefab del objeto que el enemigo suelta al morir.
     /// </summary>
     public GameObject deathEffect, itemDrop;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Inicializa la salud actual del enemigo al valor máximo.
     /// </summary>
@@ -35,7 +38,9 @@ public class EnemyHealthmanager : MonoBehaviour
     {
         currentHealth = maxHealth;
     }
+    #endregion
 
+    #region Funciones Públicas
     /// <summary>
     /// Aplica daño al enemigo. Si su salud llega a cero o menos,
     /// reproduce sonido, destruye el enemigo, instancia efectos y objetos.
@@ -54,5 +59,5 @@ public class EnemyHealthmanager : MonoBehaviour
         }
         PlayerController.instance.Bounce();
     }
-    
+    #endregion
 }

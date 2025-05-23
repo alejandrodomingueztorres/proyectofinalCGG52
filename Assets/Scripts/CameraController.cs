@@ -9,17 +9,22 @@ using Cinemachine;
 /// </summary>
 public class CameraController : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única del controlador de cámara.
     /// Permite el acceso global al componente desde otras clases.
     /// </summary>
     public static CameraController instance;
+    #endregion
 
+    #region Variables Públicas
     /// <summary>
     /// Referencia al componente <c>CinemachineBrain</c> que gestiona la lógica de la cámara virtual.
     /// </summary>
     public CinemachineBrain cmBrain;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Se ejecuta antes del método <c>Start()</c>.
     /// Asigna la instancia estática de este controlador.
@@ -46,4 +51,5 @@ public class CameraController : MonoBehaviour
     {
         
     }
+    #endregion
 }

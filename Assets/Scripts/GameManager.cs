@@ -9,16 +9,22 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    #region Instancia Singleton
     /// <summary>
     /// Instancia única del GameManager accesible globalmente.
     /// </summary>
     public static GameManager instance;
+    #endregion
 
+    #region Variables Privadas
     /// <summary>
     /// Posición donde el jugador reaparecerá después de morir.
     /// </summary>
     private Vector3 respawnPosition;
+    #endregion
 
+
+    #region Variables Públicas
     /// <summary>
     /// Efecto visual que se reproduce al morir el jugador.
     /// </summary>
@@ -44,7 +50,9 @@ public class GameManager : MonoBehaviour
     /// Indica si el jugador está en proceso de respawn.
     /// </summary>
     public bool isRespawning;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Asigna esta instancia como la única existente.
     /// </summary>
@@ -75,7 +83,9 @@ public class GameManager : MonoBehaviour
             PauseUnPase();
         }
     }
+    #endregion
 
+    #region Gestión de Respawn
     /// <summary>
     /// Inicia el proceso de respawn del jugador.
     /// </summary>
@@ -116,6 +126,7 @@ public class GameManager : MonoBehaviour
         isRespawning = false;
     }
 
+
     /// <summary>
     /// Establece una nueva posición de respawn para el jugador.
     /// </summary>
@@ -125,7 +136,9 @@ public class GameManager : MonoBehaviour
         respawnPosition = newSpawnPoint;
         Debug.Log("Spawn Set");
     }
+    #endregion
 
+    #region Monedas
     /// <summary>
     /// Añade monedas al total del jugador y actualiza la UI.
     /// </summary>
@@ -135,7 +148,9 @@ public class GameManager : MonoBehaviour
         currentCoins += coinsToAdd;
         UIManager.instance.coinText.text = "" + currentCoins;
     }
+    #endregion
 
+    #region Pausa
     /// <summary>
     /// Alterna entre estado de pausa y juego.
     /// </summary>
@@ -161,7 +176,9 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    #endregion
 
+    #region Fin del Nivel
     /// <summary>
     /// Corrutina que maneja la lógica de finalización del nivel.
     /// </summary>
@@ -190,4 +207,5 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(levelToLoad);
     }
+    #endregion
 }

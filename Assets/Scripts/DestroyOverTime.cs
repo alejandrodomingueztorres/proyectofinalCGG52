@@ -13,12 +13,16 @@ using UnityEngine;
 /// </remarks>
 public class DestroyOverTime : MonoBehaviour
 {
+    #region Variables de Configuración
     /// <summary>
     /// Tiempo de vida en segundos antes de que el objeto se destruya.
     /// </summary>
     [Tooltip("Tiempo en segundos antes de destruir este GameObject.")]
     public float lifeTime;
+    #endregion
 
+
+    #region Métodos de Unity
     /// <summary>
     /// Método llamado al iniciar el script.
     /// </summary>
@@ -41,4 +45,5 @@ public class DestroyOverTime : MonoBehaviour
     {
         Destroy(gameObject, lifeTime);
     }
+    #endregion
 }

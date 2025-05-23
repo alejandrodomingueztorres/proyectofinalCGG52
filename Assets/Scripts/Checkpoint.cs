@@ -8,11 +8,14 @@ using UnityEngine;
 /// </summary>
 public class Checkpoint : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// GameObject visual que indica que el checkpoint está activo, GameObject visual que indica que el checkpoint está inactivo.
     /// </summary>
     public GameObject CpON, CpOFF;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Método llamado al inicio del ciclo de vida del componente.
     /// Actualmente no realiza ninguna acción.
@@ -30,7 +33,9 @@ public class Checkpoint : MonoBehaviour
     {
         
     }
+    #endregion
 
+    #region Detección de Jugador
     /// <summary>
     /// Se ejecuta cuando otro collider entra en el trigger del checkpoint.
     /// Si el jugador lo activa, se actualiza el punto de reaparición y se desactivan los demás checkpoints.
@@ -56,4 +61,5 @@ public class Checkpoint : MonoBehaviour
             CpON.SetActive(true);
         }
     }
+    #endregion
 }

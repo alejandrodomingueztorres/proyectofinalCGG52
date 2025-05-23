@@ -8,11 +8,14 @@ using UnityEngine;
 /// </summary>
 public class HealthManager : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única del <c>HealthManager</c> para acceso global.
     /// </summary>
     public static HealthManager instance;
+    #endregion
 
+    #region Variables Públicas
     /// <summary>
     /// Salud actual del jugador, Salud máxima del jugador.
     /// </summary>
@@ -32,7 +35,9 @@ public class HealthManager : MonoBehaviour
     /// Conjunto de sprites que representan la barra de salud en diferentes niveles.
     /// </summary>
     public Sprite[] healthBarImages;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Inicializa la instancia del singleton <c>HealthManager</c>.
     /// </summary>
@@ -79,7 +84,9 @@ public class HealthManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Control de Daño y Curación
     /// <summary>
     /// Aplica daño al jugador si no está en estado de invencibilidad.
     /// Si la salud llega a cero, se activa la reaparición desde el GameManager.
@@ -170,5 +177,5 @@ public class HealthManager : MonoBehaviour
         currentHealth = 0;
         UpdateUI(); 
     }
-
+    #endregion
 }

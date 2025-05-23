@@ -9,6 +9,7 @@ using UnityEngine;
 /// </summary>
 public class CoinPickup : MonoBehaviour
 {
+    #region Variables de Configuración
     /// <summary>
     /// Valor numérico de la moneda que se añadirá al contador del jugador.
     /// </summary>
@@ -23,7 +24,9 @@ public class CoinPickup : MonoBehaviour
     /// Índice del efecto de sonido que se reproducirá al recoger la moneda.
     /// </summary>
     public int soundToPlay;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Inicializa el objeto. Este método se llama antes de la primera actualización del frame.
     /// </summary>
@@ -39,7 +42,9 @@ public class CoinPickup : MonoBehaviour
     {
         
     }
+    #endregion
 
+    #region Detección de Recolección
     /// <summary>
     /// Método llamado automáticamente por Unity cuando otro collider entra en el trigger de esta moneda.
     /// Si el objeto que entra es el jugador, se agrega el valor de la moneda, se reproduce un efecto
@@ -56,4 +61,5 @@ public class CoinPickup : MonoBehaviour
             AudioManager.instance.PlaySFX(soundToPlay);
         }
     }
+    #endregion
 }

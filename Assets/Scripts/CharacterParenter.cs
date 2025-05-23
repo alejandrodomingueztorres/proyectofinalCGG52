@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CharacterParenter : MonoBehaviour
 {
+    #region Variables de Configuración
     /// <summary>
     /// Capa que contiene las plataformas móviles detectables.
     /// </summary>
@@ -22,12 +23,28 @@ public class CharacterParenter : MonoBehaviour
     /// Indica si se deben mostrar mensajes de depuración en la consola.
     /// </summary>
     [SerializeField] private bool showDebug = true;
+    #endregion
 
+    #region Variables Privadas
+    /// <summary>
+    /// Referencia al transform padre original del personaje.
+    /// </summary>
     private Transform originalParent;
+    /// <summary>
+    /// Referencia al componente CharacterController del personaje.
+    /// </summary>
     private CharacterController characterController;
+    /// <summary>
+    /// Referencia a la plataforma actual sobre la que está el personaje.
+    /// </summary>
     private Transform currentPlatform;
+    /// <summary>
+    /// Última posición conocida de la plataforma actual.
+    /// </summary>
     private Vector3 lastPlatformPosition;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Inicializa referencias y verifica que el objeto tenga un CharacterController.
     /// </summary>
@@ -106,4 +123,5 @@ public class CharacterParenter : MonoBehaviour
         Vector3 rayStart = transform.position + new Vector3(0, 0.1f, 0);
         Gizmos.DrawLine(rayStart, rayStart + Vector3.down * (checkDistance + 0.1f));
     }
+    #endregion
 }

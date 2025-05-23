@@ -12,6 +12,7 @@ using UnityEngine.AI;
 /// </remarks>
 public class EnemyController : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Puntos por los que el enemigo patrulla.
     /// </summary>
@@ -77,7 +78,9 @@ public class EnemyController : MonoBehaviour
     /// Estado actual del enemigo.
     /// </summary>
     public AIState currentState;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Inicializa el estado de espera al comenzar.
     /// </summary>
@@ -197,5 +200,6 @@ public class EnemyController : MonoBehaviour
         }
         
     }
+    #endregion
 
 }

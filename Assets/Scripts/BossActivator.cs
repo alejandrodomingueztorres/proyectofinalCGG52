@@ -11,16 +11,21 @@ using UnityEngine;
 /// </remarks>
 public class BossActivator : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única de BossActivator para uso global.
     /// </summary>
     public static BossActivator instance;
+    #endregion
 
+    #region Variables Públicas
     /// <summary>
     /// Objeto de la entrada que se desactivará al iniciar el combate contra el jefe, Objeto del jefe que se activará al detectar al jugador.
     /// </summary>
     public GameObject entrance, theBoss;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Asigna esta instancia como la única del tipo BossActivator.
     /// </summary>
@@ -46,4 +51,5 @@ public class BossActivator : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    #endregion
 }
