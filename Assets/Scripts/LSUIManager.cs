@@ -10,11 +10,14 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 /// </summary>
 public class LSUIManager : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única del LSUIManager, accesible globalmente.
     /// </summary>
     public static LSUIManager instance;
+    #endregion
 
+    #region UI Elements
     /// <summary>
     /// Componente de texto que muestra el nombre del nivel actual.
     /// </summary>
@@ -29,7 +32,9 @@ public class LSUIManager : MonoBehaviour
     /// Componente de texto que muestra la cantidad de monedas recolectadas en el nivel.
     /// </summary>
     public Text coinsText;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Se llama al iniciar el objeto. Inicializa la instancia y oculta el panel de nombre de nivel.
     /// </summary>
@@ -46,4 +51,5 @@ public class LSUIManager : MonoBehaviour
     {
         
     }
+    #endregion
 }

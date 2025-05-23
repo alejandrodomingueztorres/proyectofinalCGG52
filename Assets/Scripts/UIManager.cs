@@ -10,11 +10,13 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class UIManager : MonoBehaviour
 {
+    #region Singleton
     /// <summary>
     /// Instancia única del UIManager para acceso global.
     /// </summary>
     public static UIManager instance;
 
+    #region Transiciones
     /// <summary>
     /// Imagen usada como pantalla negra para transiciones.
     /// </summary>
@@ -29,7 +31,9 @@ public class UIManager : MonoBehaviour
     /// Indica si se debe hacer una transición hacia negro, Indica si se debe hacer una transición desde negro.
     /// </summary>
     public bool fadeToBlack, fadeFromBlack;
+    #endregion
 
+    #region HUD
     /// <summary>
     /// Texto que muestra el valor numérico de la salud del jugador.
     /// </summary>
@@ -44,7 +48,9 @@ public class UIManager : MonoBehaviour
     /// Texto que muestra la cantidad de monedas recogidas.
     /// </summary>
     public Text coinText;
+    #endregion
 
+    #region Menú de Pausa
     /// <summary>
     /// Objeto que representa la pantalla de pausa.
     /// </summary>
@@ -54,11 +60,14 @@ public class UIManager : MonoBehaviour
     /// Control deslizante para el volumen de la música, Control deslizante para el volumen de los efectos de sonido.
     /// </summary>
     public Slider musicVolSlider, sfxVolSlider;
+    #endregion
 
+    #region Escenas
     /// <summary>
     /// Nombre de la escena del menú principal, Nombre de la escena de selección de niveles.
     /// </summary>
     public string mainMenu, levelSelect;
+    #endregion
 
     /// <summary>
     /// Inicializa la instancia del singleton UIManager.
@@ -67,7 +76,9 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Método llamado al inicio del ciclo de vida del componente.
     /// </summary>
@@ -103,7 +114,9 @@ public class UIManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Menú de Pausa
     /// <summary>
     /// Reinicia el estado del juego (pausa/reanuda).
     /// </summary>
@@ -135,7 +148,9 @@ public class UIManager : MonoBehaviour
     {
         
     }
+    #endregion
 
+    #region Navegación entre escenas
     /// <summary>
     /// Carga la escena de selección de niveles y reanuda el tiempo del juego.
     /// </summary>
@@ -153,7 +168,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(mainMenu);
         Time.timeScale = 1f;
     }
+    #endregion
 
+    #region Volumen
     /// <summary>
     /// Ajusta el volumen de la música llamando al <c>AudioManager</c>.
     /// </summary>
@@ -169,6 +186,6 @@ public class UIManager : MonoBehaviour
     {
         AudioManager.instance.SetSFXLevel();
     }
-
+    #endregion
 }
 

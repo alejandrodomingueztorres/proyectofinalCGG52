@@ -9,6 +9,7 @@ using TMPro;
 /// </summary>
 public class Timer : MonoBehaviour
 {
+    #region Variables
     /// <summary>
     /// Referencia al componente de texto que mostrará el tiempo restante.
     /// </summary>
@@ -21,7 +22,9 @@ public class Timer : MonoBehaviour
     
     private int minutes, seconds, cents;
     private float startTime; // Tiempo original para reiniciar
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Inicializa el temporizador guardando el valor original para futuros reinicios.
     /// </summary>
@@ -52,4 +55,5 @@ public class Timer : MonoBehaviour
             timerTime = startTime; // Reinicia el temporizador
         }
     }
+    #endregion
 }

@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class ResetPlayer : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Instancia única del <c>ResetPlayer</c> para acceso global.
     /// </summary>
@@ -17,7 +18,9 @@ public class ResetPlayer : MonoBehaviour
     /// Posición a la que se reubicará el jugador al activarse el reseteo.
     /// </summary>
     public Vector3 respawnPosition;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Asigna la instancia estática del <c>ResetPlayer</c>.
     /// </summary>
@@ -40,4 +43,5 @@ public class ResetPlayer : MonoBehaviour
             PlayerController.instance.gameObject.SetActive(true);
         }
     }
+    #endregion
 }

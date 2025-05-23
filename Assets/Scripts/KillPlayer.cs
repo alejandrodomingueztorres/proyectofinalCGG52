@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class KillPlayer : MonoBehaviour
 {
+    #region Detección de Jugador
     /// <summary>
     /// Se activa cuando otro collider entra en el trigger de este objeto.
     /// Si el objeto que entra tiene la etiqueta "Player", se llama al método <c>Respawn()</c> del GameManager.
@@ -20,4 +21,5 @@ public class KillPlayer : MonoBehaviour
             GameManager.instance.Respawn();
         }
     }
+    #endregion
 }

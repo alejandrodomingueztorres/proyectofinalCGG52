@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Controla la visibilidad de un GameObject en función del estado de desbloqueo de un nivel.
 /// </summary>
@@ -13,12 +14,15 @@ using UnityEngine;
 /// </remarks>
 public class LSBridge : MonoBehaviour
 {
+    #region Variables
     /// <summary>
     /// Nombre del nivel cuya condición de desbloqueo determina si este GameObject está activo.
     /// </summary>
     [Tooltip("Nombre del nivel que debe estar desbloqueado para activar este GameObject.")]
     public string levelToUnlock;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Verifica si el nivel está desbloqueado al iniciar el juego.
     /// </summary>
@@ -41,4 +45,5 @@ public class LSBridge : MonoBehaviour
     {
         
     }
+    #endregion
 }

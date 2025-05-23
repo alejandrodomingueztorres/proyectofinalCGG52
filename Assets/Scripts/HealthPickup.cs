@@ -11,6 +11,7 @@ using UnityEngine;
 /// </remarks>
 public class HealthPickup : MonoBehaviour
 {
+    #region Variables de Configuración
     /// <summary>
     /// Cantidad de salud que se restaura si <see cref="isFullHeal"/> es falso.
     /// </summary>
@@ -30,7 +31,9 @@ public class HealthPickup : MonoBehaviour
     /// Índice del efecto de sonido que se reproduce al recoger el objeto.
     /// </summary>
     public int soundToPlay;
+    #endregion
 
+    #region Detección de Recolección
     /// <summary>
     /// Detecta la colisión con el jugador y aplica la curación correspondiente.
     /// </summary>
@@ -58,5 +61,5 @@ public class HealthPickup : MonoBehaviour
         }
     }
 
-
+    #endregion
 }

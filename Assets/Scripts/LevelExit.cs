@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Representa la salida de un nivel. Al ser activada por el jugador,
 /// reproduce una animación y comienza la secuencia de finalización del nivel.
 /// </summary>
 public class LevelExit : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Referencia al <c>Animator</c> responsable de reproducir la animación de salida.
     /// </summary>
     public Animator animator;
+    #endregion
 
+    #region Detección de Jugador
     /// <summary>
     /// Se ejecuta cuando otro collider entra en el trigger del objeto.
     /// Si el jugador lo activa, se reproduce una animación y se inicia la rutina de finalización de nivel.
@@ -30,4 +34,5 @@ public class LevelExit : MonoBehaviour
 
         }
     }
+    #endregion
 }

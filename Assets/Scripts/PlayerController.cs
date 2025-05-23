@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Instancia única del controlador del jugador.
     /// </summary>
@@ -86,7 +87,9 @@ public class PlayerController : MonoBehaviour
     /// Indica si el movimiento del jugador está detenido.
     /// </summary>
     public bool stopMove;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Inicializa la instancia única.
     /// </summary>
@@ -186,7 +189,9 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Grounded", charController.isGrounded);
 
     }
+    #endregion
 
+    #region Knockback y Rebote
     /// <summary>
     /// Aplica el retroceso (knockback) al jugador.
     /// </summary>
@@ -207,7 +212,7 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = bounceForce;
         charController.Move(moveDirection * Time.deltaTime);
     }
-
+    #endregion
     /*
     // Métodos alternativos de detección de suelo (no usados con CharacterController)
     void OnCollisionEnter(Collision collision)

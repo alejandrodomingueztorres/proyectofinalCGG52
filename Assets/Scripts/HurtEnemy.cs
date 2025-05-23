@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class HurtEnemy : MonoBehaviour
 {
+    #region Detección de Enemigos
     /// <summary>
     /// Se ejecuta cuando otro collider entra en el trigger de este objeto.
     /// Si el objeto tiene la etiqueta "Enemy", se le aplica daño mediante <c>EnemyHealthmanager.TakeDamage()</c>.
@@ -20,4 +21,5 @@ public class HurtEnemy : MonoBehaviour
             other.GetComponent<EnemyHealthmanager>().TakeDamage();
         }
     }
+    #endregion
 }

@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class LevelEntry : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Nombre de la escena del nivel a cargar, Nombre de la clave en PlayerPrefs usada para verificar si el nivel está desbloqueado, Nombre mostrado en la interfaz para este punto de nivel.
     /// </summary>
@@ -29,10 +30,14 @@ public class LevelEntry : MonoBehaviour
     /// Elemento visual mostrado si el nivel está bloqueado.
     /// </summary>
     public GameObject mapPointInactive;
+    #endregion
 
+    #region Variables Privadas
     private bool levelUnlocked;
     private bool levelLoading;
+    #endregion
 
+    #region Métodos Unity
     /// <summary>
     /// Verifica el estado del nivel (bloqueado/desbloqueado) al iniciar,
     /// actualiza la interfaz y posiciona al jugador si es el nivel actual.
@@ -108,7 +113,9 @@ public class LevelEntry : MonoBehaviour
 
         LSUIManager.instance.lNamePanel.SetActive(false);
     }
+    #endregion
 
+    #region Corrutinas
     /// <summary>
     /// Corrutina que espera antes de cargar el nivel seleccionado. 
     /// Detiene el movimiento del jugador y activa una animación de fundido.
@@ -123,4 +130,5 @@ public class LevelEntry : MonoBehaviour
         SceneManager.LoadScene(levelName);
         PlayerPrefs.SetString("CurrentLevel", levelName);
     }
+    #endregion
 }

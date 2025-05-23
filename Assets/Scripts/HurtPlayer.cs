@@ -9,6 +9,7 @@ using UnityEngine;
 /// </summary>
 public class HurtPlayer : MonoBehaviour
 {
+    #region Métodos de Unity
     /// <summary>
     /// Método llamado al inicio del ciclo de vida del componente.
     /// Actualmente no realiza ninguna acción.
@@ -26,7 +27,9 @@ public class HurtPlayer : MonoBehaviour
     {
         
     }
+    #endregion
 
+    #region Detección de Jugador
     /// <summary>
     /// Se activa cuando otro collider entra en el trigger de este objeto.
     /// Si el collider pertenece al jugador, se aplica daño llamando a <c>HealthManager.instance.Hurt()</c>.
@@ -39,4 +42,5 @@ public class HurtPlayer : MonoBehaviour
             HealthManager.instance.Hurt();
         }
     }
+    #endregion
 }

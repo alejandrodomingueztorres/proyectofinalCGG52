@@ -15,6 +15,7 @@ using UnityEngine.UI;
 /// </remarks>
 public class PauseScreen : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Panel principal del menú de pausa, Panel del submenú de opciones.
     /// </summary>
@@ -29,7 +30,9 @@ public class PauseScreen : MonoBehaviour
     /// Slider para ajustar el volumen de la música, Slider para ajustar el volumen de los efectos de sonido.
     /// </summary>
     public Slider musicVolSlider, sfxVolSlider;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Método llamado al iniciar el script (actualmente no realiza acciones).
     /// </summary>
@@ -55,7 +58,9 @@ public class PauseScreen : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region Control de Pausa
     /// <summary>
     /// Llama al método de GameManager para alternar el estado de pausa.
     /// </summary>
@@ -81,7 +86,9 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 0;
         juegoPausado = true;
     }
+    #endregion
 
+    #region Navegación de Menús
     /// <summary>
     /// Muestra el panel de opciones dentro del menú de pausa.
     /// </summary>
@@ -115,7 +122,9 @@ public class PauseScreen : MonoBehaviour
     {
         SceneManager.LoadScene(UIManager.instance.mainMenu);
     }
+    #endregion
 
+    #region Control de Audio
     /// <summary>
     /// Llama al AudioManager para establecer el volumen de la música.
     /// </summary>
@@ -131,4 +140,5 @@ public class PauseScreen : MonoBehaviour
     {
         AudioManager.instance.SetSFXLevel();
     }
+    #endregion
 }

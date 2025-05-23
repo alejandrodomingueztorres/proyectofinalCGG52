@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 /// </remarks>
 public class MainMenu : MonoBehaviour
 {
+    #region Variables Públicas
     /// <summary>
     /// Nombre de la primera escena que se carga al iniciar un nuevo juego.
     /// </summary>
@@ -36,7 +37,9 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     [Tooltip("Lista de niveles usados para reiniciar su estado en PlayerPrefs.")]
     public string[] levelNames;
+    #endregion
 
+    #region Métodos de Unity
     /// <summary>
     /// Inicializa el menú verificando si hay progreso guardado.
     /// </summary>
@@ -54,7 +57,9 @@ public class MainMenu : MonoBehaviour
             ResetProgress();
         }
     }
+    #endregion
 
+    #region Funcionalidad del Menú
     /// <summary>
     /// Inicia un nuevo juego cargando la escena especificada y reiniciando el progreso.
     /// </summary>
@@ -94,4 +99,5 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt(levelNames[i] + "_unlocked", 0);
         }
     }
+    #endregion
 }
