@@ -3759,6 +3759,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000009252617
       objectReference: {fileID: 0}
+    - target: {fileID: 6372592081334258950, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: DeathEffect
+      value: 
+      objectReference: {fileID: 7181586160474937875, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
     - target: {fileID: 8604140675929898876, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.576355
