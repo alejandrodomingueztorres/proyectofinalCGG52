@@ -188,6 +188,8 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(waitToShowExit);
         // Activar zona de victoria
         victoryZone.SetActive(true);
+        // Desactivar el jefe
+        gameObject.SetActive(false);
     }
     #endregion
 }

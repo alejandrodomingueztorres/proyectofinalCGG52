@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTimer: {fileID: 0}
-  DeathEffect: {fileID: 1615467701871762457, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
+  DeathEffect: {fileID: 7181586160474937875, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
   currentCoins: 0
   levelEndMusic: 0
   levelToLoad: LevelSelect

@@ -824,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 554548172}
   victoryZone: {fileID: 1780657394}
-  waitToShowExit: 15
+  waitToShowExit: 60
   bossMusic: 0
   bossDeath: 0
   bossDeathShout: 1
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 881696642}
-  timerTime: 240
+  timerTime: 180
 --- !u!4 &788293878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8604140675929898876, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
@@ -4725,6 +4725,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8500115343387817333, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
+      propertyPath: DeathEffect
+      value: 
+      objectReference: {fileID: 7181586160474937875, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
