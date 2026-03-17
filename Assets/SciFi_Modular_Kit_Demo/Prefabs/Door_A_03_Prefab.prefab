@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2741138660627176064}
-  m_LocalRotation: {x: 0, y: -0.00000003774895, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000015279424, y: 0.0000012139485, z: -0.00000005550942, w: 1}
+  m_LocalPosition: {x: 20.726002, y: 20.154877, z: -2.282238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5881162709833894144}
-  m_RootOrder: 0
+  m_Father: {fileID: 8364554293159966217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &215740163463511252
 MeshFilter:
@@ -92,11 +92,52 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2741138660627176064}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.12100291, y: 1.756628, z: 0.79999954}
   m_Center: {x: 0, y: 0.878314, z: -0.3999987}
+--- !u!1 &5515471634232440219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8364554293159966217}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8364554293159966217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515471634232440219}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000015279426, y: -0.0000012516974, z: 0.000000055509418, w: 1}
+  m_LocalPosition: {x: -20.726006, y: -20.154879, z: 2.2821867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6403819674132227185}
+  - {fileID: 8329495490434213721}
+  m_Father: {fileID: 5881162709833894144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6047554607135935057
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,13 +164,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6047554607135935057}
-  m_LocalRotation: {x: 0, y: -0.00000003774895, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000015279424, y: 0.0000012139485, z: -0.00000005550942, w: 1}
+  m_LocalPosition: {x: 20.726002, y: 20.154877, z: -2.282238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5881162709833894144}
-  m_RootOrder: 1
+  m_Father: {fileID: 8364554293159966217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8790729721197444196
 MeshFilter:
@@ -189,9 +230,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6047554607135935057}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.12100291, y: 1.756628, z: 0.8062761}
   m_Center: {x: -1.6964863e-15, y: 0.878314, z: 0.39686042}
 --- !u!1 &6545356434981000122
@@ -217,13 +266,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6545356434981000122}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6403819674132227185}
-  - {fileID: 8329495490434213721}
+  - {fileID: 8364554293159966217}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
