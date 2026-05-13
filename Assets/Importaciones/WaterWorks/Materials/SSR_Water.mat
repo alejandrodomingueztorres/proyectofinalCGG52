@@ -81,7 +81,7 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _Tiling: 0.2
-    - _Transparency: 0.95
+    - _Transparency: 0.4
     - _UseFoam: 1
     - _Use_Foam: 1
     - _WaveDist: 5
@@ -93,10 +93,10 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 1
     m_Colors:
-    - _Color: {r: 0.08721964, g: 0.3812744, b: 0.5283019, a: 1}
-    - _EdgeColor: {r: 0.25098038, g: 0.32941175, b: 0.28627446, a: 1}
+    - _Color: {r: 1, g: 0.08466068, b: 0, a: 1}
+    - _EdgeColor: {r: 1, g: 0, b: 0.042039394, a: 1}
     - _Edge_Color: {r: 0.2507565, g: 0.3301887, b: 0.28799033, a: 1}
-    - _FoamColor: {r: 4, g: 4, b: 4, a: 1}
+    - _FoamColor: {r: 3.9296644, g: 0, b: 0, a: 1}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &684404215947078111

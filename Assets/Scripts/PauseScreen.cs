@@ -44,20 +44,7 @@ public class PauseScreen : MonoBehaviour
     /// <summary>
     /// Verifica si se presionó Escape para pausar o reanudar el juego.
     /// </summary>
-    void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (juegoPausado )
-            {
-                Resume();
-            }
-            else
-            {
-                Pausar();
-            }
-        }
-    }
+    
     #endregion
 
     #region Control de Pausa
