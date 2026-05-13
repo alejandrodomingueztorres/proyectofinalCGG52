@@ -93,10 +93,10 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.08466068, b: 0, a: 1}
-    - _EdgeColor: {r: 1, g: 0, b: 0.042039394, a: 1}
+    - _Color: {r: 0.06666667, g: 0.7137255, b: 0.9607844, a: 1}
+    - _EdgeColor: {r: 0.06808472, g: 0.7129895, b: 0.9622642, a: 1}
     - _Edge_Color: {r: 0.2507565, g: 0.3301887, b: 0.28799033, a: 1}
-    - _FoamColor: {r: 3.9296644, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.0056053917, g: 0.46778384, b: 0.913099, a: 1}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &684404215947078111
