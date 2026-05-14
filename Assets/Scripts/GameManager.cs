@@ -191,12 +191,11 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_unlocked", 1);
 
-        if(PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_coins"))
+        if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + "_coins"))
         {
-            if(currentCoins > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_coins"))
+            if (currentCoins > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_coins"))
             {
                 PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_coins", currentCoins);
             }
@@ -206,12 +205,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "_coins", currentCoins);
         }
 
-        SceneManager.LoadScene(levelToLoad);
-
-
-        PlayerPrefs.SetFloat("TiempoFinal", gameTimer.GetRemainingTime()); 
+        // Guardar datos antes de cargar la escena
+        PlayerPrefs.SetFloat("TiempoFinal", gameTimer.GetRemainingTime());
         PlayerPrefs.SetInt("MonedasFinal", currentCoins);
-        SceneManager.LoadScene("FinalScene");
+
+        // Una sola carga de escena
+        SceneManager.LoadScene(levelToLoad);
     }
 
     #endregion

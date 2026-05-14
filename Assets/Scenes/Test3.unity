@@ -11019,6 +11019,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0000000064272094
       objectReference: {fileID: 0}
+    - target: {fileID: 4054183387554994819, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120454344336400416, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863910362558528506, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5392631513838981340, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -11063,6 +11075,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000010463343
       objectReference: {fileID: 0}
+    - target: {fileID: 6936981322141111208, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7416806172006119704, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.79999924
@@ -11103,6 +11119,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951649342101368412, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 1090344810}
     - target: {fileID: 7951649342101368412, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: levelToLoad
       value: LevelSelect
@@ -12779,6 +12799,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 913984243086090705, guid: f82602dc30cf4504aaff9d027539bc3f, type: 3}
   m_PrefabInstance: {fileID: 1080594812}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1090344810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5392631513838981340, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+  m_PrefabInstance: {fileID: 902928328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645df4941569b144e8b36777af8413c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1100495078
 GameObject:
   m_ObjectHideFlags: 0

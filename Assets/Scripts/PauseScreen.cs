@@ -75,6 +75,21 @@ public class PauseScreen : MonoBehaviour
     }
     #endregion
 
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (juegoPausado)
+            {
+                Resume();
+            }
+            else
+            {
+                Pausar();
+            }
+        }
+    }
+
     #region Navegación de Menús
     /// <summary>
     /// Muestra el panel de opciones dentro del menú de pausa.

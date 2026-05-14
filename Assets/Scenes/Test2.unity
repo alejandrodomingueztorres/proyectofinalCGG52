@@ -17993,6 +17993,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.000000009252617
       objectReference: {fileID: 0}
+    - target: {fileID: 7138342192178762019, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7416806172006119704, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.84
@@ -18017,6 +18021,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7951649342101368412, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 2057297056}
     - target: {fileID: 8271232164794813305, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -18066,6 +18074,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+--- !u!114 &2057297056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5392631513838981340, guid: 5a6c0d5351d77d246bdcaa6b417f72bd, type: 3}
+  m_PrefabInstance: {fileID: 2057297055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645df4941569b144e8b36777af8413c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2058796138
 PrefabInstance:
   m_ObjectHideFlags: 0
