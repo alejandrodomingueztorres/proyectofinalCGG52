@@ -49976,6 +49976,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8028256658907633752, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
   m_PrefabInstance: {fileID: 8986808678245627213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &825506660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4740804414177713707, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
+  m_PrefabInstance: {fileID: 8986808678245627213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645df4941569b144e8b36777af8413c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827139335
 GameObject:
   m_ObjectHideFlags: 0
@@ -125735,9 +125746,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8500115343387817333, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
+      propertyPath: gameTimer
+      value: 
+      objectReference: {fileID: 825506660}
+    - target: {fileID: 8500115343387817333, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
       propertyPath: DeathEffect
       value: 
       objectReference: {fileID: 7181586160474937875, guid: 6d0becbf070976c47ad0b16ab697b60c, type: 3}
+    - target: {fileID: 8500115343387817333, guid: ef9554ae588a88241a0887c09ffb53a6, type: 3}
+      propertyPath: levelToLoad
+      value: FinalScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
