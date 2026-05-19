@@ -14330,24 +14330,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 107866958}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 107866958}
+      objectReference: {fileID: 1183135735}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1183135735}
+      objectReference: {fileID: 657062997}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 657062997}
+      objectReference: {fileID: 0}
     - target: {fileID: 8379190104712777307, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: m_Name
       value: Skeleton (11)
@@ -64323,20 +64323,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1199053084}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1199053084}
+      objectReference: {fileID: 1349345683}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1349345683}
+      objectReference: {fileID: 1060690693}
     - target: {fileID: 7194103543302156409, guid: 95f19887a10dc2e40ba2d1308f3a1b2f, type: 3}
       propertyPath: patrolPoints.Array.data[3]
       value: 
